@@ -9,8 +9,8 @@ from pygame import Surface
 _ = pygame.init()
 screen: Surface = pygame.display.set_mode((1280, 720))
 clock: Clock = pygame.time.Clock()
-running = True
-dt = 0
+running: bool = True
+dt: float = 0
 
 player_pos: Vector2 = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 
@@ -36,12 +36,8 @@ while running:
     if keys[pygame.K_d]:
         player_pos.x += 300 * dt
 
-    # flip() the display to put your work on screen
     pygame.display.flip()
 
-    # limits FPS to 60
-    # dt is delta time in seconds since last frame, used for framerate-
-    # independent physics.
-    dt: float = clock.tick(60) / 1000
+    dt = clock.tick(60) / 1000
 
 pygame.quit()
