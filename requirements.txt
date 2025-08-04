@@ -1,4 +1,13 @@
 basedpyright==1.31.1
+freetype-py==2.5.1
+lxml==6.0.0
+military-symbol==2.0.2
 nodejs-wheel-binaries==22.18.0
 numpy==2.3.2
 pygame-ce==2.5.5
+PyYAML==6.0.2
+RapidFuzz==3.13.0
+scipy==1.16.1
+svgpathtools==1.7.1
+svgwrite==1.4.3
+thefuzz==0.22.1
