@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing_extensions import override
 
 from pygame import Vector2
 
@@ -15,5 +16,6 @@ class MoveCommand(Command):
     def __init__(self, pos: Vector2) -> None:
         self.pos = pos
 
+    @override
     def execute(self, gameObject: GameObject) -> None:  
         gameObject.move(self.pos)
