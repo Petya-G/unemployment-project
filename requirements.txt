@@ -5,6 +5,8 @@ military-symbol==2.0.2
 nodejs-wheel-binaries==22.18.0
 numpy==2.3.2
 pygame-ce==2.5.5
+pygame_gui==0.6.14
+python-i18n==0.3.9
 PyYAML==6.0.2
 RapidFuzz==3.13.0
 scipy==1.16.1
