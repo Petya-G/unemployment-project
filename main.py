@@ -1,9 +1,8 @@
 # Example file showing a circle moving on screen
-import pygame 
-from pygame.key import ScancodeWrapper
 from pygame.math import Vector2
+import pygame 
 from pygame.time import Clock
-from pygame import Surface
+from pygame import MOUSEBUTTONDOWN, Surface
 
 # pygame setup
 _ = pygame.init()
@@ -21,20 +20,15 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+        elif event.type == MOUSEBUTTONDOWN:
+            pos: tuple[int, int] = pygame.mouse.get_pos()
+            print(pos[0], pos[1])
+            player_pos= pos
+
     # fill the screen with a color to wipe away anything from last frame
     _ = screen.fill("purple")
 
     _ = pygame.draw.circle(screen, "red", player_pos, 40)
-
-    keys: ScancodeWrapper = pygame.key.get_pressed()
-    if keys[pygame.K_w]:
-        player_pos.y -= 300 * dt
-    if keys[pygame.K_s]:
-        player_pos.y += 300 * dt
-    if keys[pygame.K_a]:
-        player_pos.x -= 300 * dt
-    if keys[pygame.K_d]:
-        player_pos.x += 300 * dt
 
     pygame.display.flip()
 
