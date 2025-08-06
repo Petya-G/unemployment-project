@@ -1,3 +1,6 @@
+from pygame.rect import Rect
+
+
 import io
 import pygame
 from pygame import Vector2, Surface
@@ -28,4 +31,5 @@ class UnitView:
         self.surface = self._getSurface()
     
     def getPos(self) -> Vector2:
-        return Vector2(self.unit.pos.x - self.surface.width / 2, self.unit.pos.y - self.surface.height / 2)
+        rect: Rect = self.surface.get_rect()
+        return self.unit.pos - Vector2(rect.width / 2, rect.height / 2)
