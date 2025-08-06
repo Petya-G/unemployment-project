@@ -21,7 +21,7 @@ while running:
             running = False
 
         elif event.type == MOUSEBUTTONDOWN:
-            pos: tuple[int, int] = pygame.mouse.get_pos()
+            pos: Vector2 = Vector2(pygame.mouse.get_pos())
             print(pos[0], pos[1])
             player_pos= pos
 
