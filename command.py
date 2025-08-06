@@ -3,11 +3,11 @@ from typing_extensions import override
 
 from pygame import Vector2
 
-from gameObject import GameObject
+from unit import Unit
 
 class Command(ABC):
     @abstractmethod
-    def execute(self, gameObject: GameObject) -> None:
+    def execute(self, gameObject: Unit) -> None:
         ...
 
 class MoveCommand(Command):
@@ -17,5 +17,5 @@ class MoveCommand(Command):
         self.pos = pos
 
     @override
-    def execute(self, gameObject: GameObject) -> None:  
+    def execute(self, gameObject: Unit) -> None:  
         gameObject.move(self.pos)
